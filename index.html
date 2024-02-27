@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-router.js"></script>
+    <title>VUE-SHOPLANE</title>
+</head>
+<body>
+    <div id="app">
+        <section id="navbar">
+            <nav-bar></nav-bar> 
+        </section>
+        <section class="sliding">
+            <sliding></sliding>
+        </section>
+        <section class="animation">
+            <animation></animation>
+        </section>
+        <!-- <section id="products">
+            <h3 class="section-heading">Clothing for Men and Women</h3>
+            <div id="clothing">
+                <clothing></clothing>
+            </div>
+        </section> -->
+        <section class="footer">
+            <footer-bar></footer-bar>
+        </section>
+    </div>
+    <script type="module">
+        const { createApp } = Vue;
+        import navbar from "./components/nav_bar.js";
+        import footer from "./components/footer.js";
+        import sliding from "./components/sliding.js";
+        import animation from "./components/animation.js";
+        // import clothing from "./components/clothing.js";
+        var app = createApp({
+            data() {
+                return {
+                    message : "Hello Vue!"
+                }
+            }
+        })
+        app.component("nav-bar",navbar);
+        app.component("footer-bar",footer);
+        app.component("sliding",sliding);
+        app.component("animation",animation);
+        // app.component("clothing",clothing);
+        app.mount("#app");
+    </script>
+</body>
+</html>
